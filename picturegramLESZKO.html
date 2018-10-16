@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Picturegram</title>
+
+		<style type="text/css">
+
+		h1 {
+			font-family: brushscriptstd;
+			background: black;
+			color: white;
+			letter-spacing: 2px;
+			padding: 3px;
+		}
+
+		#content{
+			width: 700px;
+			margin: auto;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+			background-color: lightblue;
+		}
+
+		img{
+			border: 2px solid magenta;
+		}
+
+		#mainpic {
+			width: calc(100% - 10px);
+			height: auto;
+			margin: 5px ;
+		}
+
+		.smallpic {
+			width: calc(33.3333333% - 10px);
+			height: auto;
+			margin: 5px;
+		}
+
+		img:hover {
+			border: 2px solid yellow;
+			cursor: pointer;
+		}
+
+
+
+		</style>
+</head>
+<body>
+	<div id="content">
+
+	<h1><center>Picturegram</center></h1>
+
+	
+
+	<img src="image1.jpg" id="mainpic">
+	<img src="image2.jpg" class="smallpic">
+	<img src="image3.jpg" class="smallpic">
+	<img src="image4.jpg" class="smallpic">
+	<img src="image5.jpg" class="smallpic">
+	<img src="image6.jpg" class="smallpic">
+	<img src="image7.jpg" class="smallpic">
+	<img src="image8.jpg" class="smallpic">
+	<img src="image9.jpg" class="smallpic">
+	<img src="image10.jpg" class="smallpic">
+	<img src="image11.jpg" class="smallpic">
+
+</div>
+
+	<script type="text/javascript">
+		const bigImage = document.querySelector("#mainpic");
+		const images = document.querySelectorAll(".smallpic");
+
+		images.forEach(image => image.addEventListener("click", 
+			function(e) {
+				let clickedImage = e.target.src;
+				let swapImage = bigImage.src;
+				bigImage.src = clickedImage;
+				e.target.src = swapImage;
+			}
+			));
+	</script>
+
+
+ 
+</body>
+</html>
